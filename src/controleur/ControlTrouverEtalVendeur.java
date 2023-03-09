@@ -11,8 +11,13 @@ public class ControlTrouverEtalVendeur {
 	}
 
 	public Etal trouverEtalVendeur(String nomVendeur) {
-		//TODO a completer
-		Etal etal = null;
+		
+		village.trouverHabitant(nomVendeur);
+		
+		if (village.trouverHabitant(nomVendeur)!=null) {
+			
+		}
+		Etal etal = village.rechercherEtal(village.trouverHabitant(nomVendeur));
 		return etal;
 	}
 }
