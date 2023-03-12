@@ -13,8 +13,8 @@ public class BoundaryPrendreEtal {
 	}
 
 	public void prendreEtal(String nomVendeur) {
-		if (controlPrendreEtal.verifierIdentite (nomVendeur)) {
-			System.out.println("je suis desolée "+ nomVendeur + " mais il faut être un habitant de notre village pour commencer ici");
+		if (!controlPrendreEtal.verifierIdentite (nomVendeur)) {
+			System.out.println("je suis desolï¿½e "+ nomVendeur + " mais il faut ï¿½tre un habitant de notre village pour commencer ici");
 			}
 		else{
 			System.out.println("Bonjour " + nomVendeur+ ",je vais regarder si je peux vous trouver un etal");
@@ -22,29 +22,30 @@ public class BoundaryPrendreEtal {
 			controlPrendreEtal.resteEtals();
 			
 			if (!controlPrendreEtal.resteEtals()) {
-				System.out.println("desolée"+ nomVendeur + " je n'ai plus d'etal qui ne soit pas deja occupé");
+				System.out.println("desolï¿½e"+ nomVendeur + " je n'ai plus d'etal qui ne soit pas deja occupï¿½");
 			}
 					
-			installerVendeur(nomVendeur);
+			else{
+				installerVendeur(nomVendeur);
 					
-				
-			}
+			}	
 		}
+	}
 	
 		
 
 	private void installerVendeur(String nomVendeur) {
-		System.out.println("c'est parfait ,il me reste un etal pour vous!");
-		System.out.println("il me faudrait quelques renseignements:");
-		System.out.println("quel produit souhaitez-vous vendre?");
+		System.out.println("C'est parfait ,il me reste un etal pour vous!");
+		System.out.println("Il me faudrait quelques renseignements:\n");
+		System.out.println("Quel produit souhaitez-vous vendre?\n");
 		String produit=scan.next();
-		System.out.println("combien de produit souhaitez-vous en vendre?");
-		int nbProduit =scan.nextInt();
+		System.out.println("Combien de produit souhaitez-vous en vendre\n?");
+		int nbProduit =Integer.parseInt(scan.next());
 		System.out.println();
 		int numeroEtal=controlPrendreEtal.prendreEtal(nomVendeur, produit, nbProduit);
 		
 		if (numeroEtal!=-1){ 
-			System.out.println("le vendeur" + nomVendeur + "s'est installé à l'etal n"+ numeroEtal);
+			System.out.println("le vendeur " + nomVendeur + " s'est installeÃ© Ã  l'etal nÂ° "+ numeroEtal);
 			
 		}
 	}
