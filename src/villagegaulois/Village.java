@@ -89,7 +89,8 @@ public class Village {
 			etal.libererEtal();
 		}
 	}
-
+	
+	
 	public boolean rechercherEtalVide() {
 		return marche.trouverEtalLibre() != -1;
 	}
